@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title class="h4">@ViewData["Title"] - SchoolGradeManager</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" />
+    <link rel="stylesheet" href="~/css/Sidebar.css"/>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SchoolGradeManager.styles.css" asp-append-version="true" />
+
+</head>
+<body>
+    <div class="area"></div>
+    <nav class="main-menu">
+        <ul>
+            <li>
+                <a asp-area="" asp-controller="Student" asp-action="Index">
+                    <i class="fa fa-users"></i>
+                    <span class="nav-text">
+                        Studenci
+                    </span>
+                </a>
+
+            </li>
+            <li class="has-subnav">
+                <a asp-area="" asp-controller="Grade" asp-action="Index">
+                    <i class="fa fa-database" aria-hidden="true"></i>
+                    <span class="nav-text">
+                        Wyniki
+                    </span>
+                </a>
+
+            </li>
+            <li class="has-subnav">
+                <a asp-area="" asp-controller="Grade" asp-action="Details">
+                    <i class="fa fa-pie-chart" aria-hidden="true"></i>
+                    <span class="nav-text">
+                        Statystyka
+                    </span>
+                </a>
+
+            </li>
+            <li class="has-subnav">
+                <a asp-area="" asp-controller="Homework" asp-action="Index">
+                    <i class="fa fa-clipboard"></i>
+                    <span class="nav-text">
+                        Zadania
+                    </span>
+                </a>
+
+            </li>
+            <li class="has-subnav">
+                <a asp-area="" asp-controller="Question" asp-action="Index">
+                    <i class="fa fa-list"></i>
+                    <span class="nav-text">
+                        Pytania
+                    </span>
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a asp-area="" asp-controller="Test" asp-action="Index">
+                    <i class="fa fa-book fa-2x"></i>
+                    <span class="nav-text">
+                        Testy
+                    </span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="logout">
+            <li>
+                <a asp-area="" asp-controller="login" asp-action="logout">
+                    <i class="fa fa-power-off fa-2x"></i>
+                    <span class="nav-text">
+                        Wyloguj
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

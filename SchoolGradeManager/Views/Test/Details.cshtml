@@ -1,0 +1,54 @@
+﻿@model SchoolGradeManager.Models.AddQuestionsToTest
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="h1">Szczegóły</h1>
+
+<div>
+    <h4 class="h4">Test</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Nazwa testu
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.testForQuestions.TestName)
+        </dd>
+    </dl>
+
+    @foreach(var item in Model.questionsInTest){
+        <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Operator
+        </dt>
+        <dd class = "col-sm-10">
+                @Html.DisplayFor(Modelitem => item.operation)
+        </dd>
+            <dt class = "col-sm-2">
+                Poprawna odpowiedź
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(Modelitem => item.answer1)
+            </dd>
+                <dt class = "col-sm-2">
+                Błędna odpowiedź 1
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(Modelitem => item.answer2)
+            </dd>
+            <dt class="col-sm-2">
+                Błędna odpowiedź 2
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(Modelitem => item.answer3)
+            </dd>
+    </dl>
+    }
+</div>
+
+<div>
+    <a class="btn btn-info" asp-action="Index">Powrót do listy</a>
+</div>
